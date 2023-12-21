@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+MYSQL_GPG="B7B3B788A8D3785C"
+# add the key
+sudo apt-key add signature.key
+# Add the apt repository
+sudo sh -c 'echo "deb http://repo.mysql.com/apt/ubuntu bionic mysql-5.7" >> /etc/apt/sources.list.d/mysql.list'
+
+# Download the MySQL APT repository key
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys "$MYSQL_GPG"
+#update the repository
+sudo apt-get update
+
+# install mysql 5.7
+sudo apt install -f mysql-client=5.7* mysql-community-server=5.7* mysql-server=5.7*
+

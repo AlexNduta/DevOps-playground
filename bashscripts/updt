@@ -1,0 +1,28 @@
+#!/usr/bin/bash
+
+release_file=/etc/os-release
+
+check_exit_status(){
+    if [ $? -ne 0 ]
+    then
+        echo "an error occured, please retyry later"
+    fi
+}
+
+if grep -q "Arch" $release_file
+then
+    # The hosy is based okn Arch
+    sudo pacman -Syu #install updates on arch linuzi
+    check_exit_status
+fi
+
+if grep -q "debian" $release_file || grep -q "Ubuntu" $release_file # silently check fo the name "Debian in the /etc/os-release director"
+then
+    #the host lis based on Debian or Ubuntu
+    #Run the apt version of the command
+    sudo apt update 1>> log.txt 2>>logerr.txt
+    check_exit_status
+
+    sudo apt dist-upgrade -y 1>> log.txt 2>>logerr.txt
+    check_exit_status 
+fi

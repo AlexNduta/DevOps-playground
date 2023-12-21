@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#creates a new user and grants Replication permission
+user="holberton_user"
+pass="projectcorrection280hbtn"
+mysql -u root -p     -e "CREATE USER '$user'@'localhost' IDENTIFIED BY '$pass';
+GRANT REPLICATION CLIENT ON *.* TO '$user'@'localhost';"
+
+mysql -u $user -p $pass -e"SHOW GRANTS FOR '$user'@'localhost'"
+

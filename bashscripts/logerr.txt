@@ -1,0 +1,21 @@
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+E: Failed to fetch http://kali.download/kali/pool/main/b/burpsuite/burpsuite_2023.10.1.1-0kali1_amd64.deb  Connection failed [IP: 104.18.103.100 80]
+E: Failed to fetch http://kali.download/kali/pool/main/m/metasploit-framework/metasploit-framework_6.3.31-0kali1_amd64.deb  Connection failed [IP: 104.18.103.100 80]
+E: Failed to fetch http://kali.download/kali/pool/main/i/impacket/python3-impacket_0.11.0-1_all.deb  Connection failed [IP: 104.18.103.100 80]
+E: Failed to fetch http://kali.download/kali/pool/main/c/crackmapexec/crackmapexec_5.4.0-0kali5_all.deb  403  Forbidden [IP: 104.18.102.100 80]
+E: Failed to fetch http://kali.download/kali/pool/main/e/exploitdb/exploitdb_20230909-0kali1_all.deb  Connection failed [IP: 104.18.103.100 80]
+E: Failed to fetch http://kali.download/kali/pool/main/p/powershell-empire/powershell-empire_5.4.2-0kali4_all.deb  Connection failed [IP: 104.18.103.100 80]
+E: Failed to fetch http://kali.download/kali/pool/main/m/mingw-w64/mingw-w64-i686-dev_11.0.1-3_all.deb  500  Internal Server Error [IP: 104.18.103.100 80]
+E: Failed to fetch http://kali.download/kali/pool/main/m/mingw-w64/mingw-w64-x86-64-dev_11.0.1-3_all.deb  500  Internal Server Error [IP: 104.18.103.100 80]
+E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?

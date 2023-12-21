@@ -1,0 +1,6 @@
+#!/usr/bin/bash
+
+echo "Please enyter your name"
+read myname
+
+echo "Your name is: $myname"
