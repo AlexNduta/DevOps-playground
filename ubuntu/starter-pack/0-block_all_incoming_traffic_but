@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# script to install a firewall an open port 22,80 and 443
+
+# install
+sudo apt install ufw -y
+sudo sed -i "s/IPV6=no/IPV6=yes/" /etc/default/ufw
+#disable the firewall
+sudo ufw diable
+
+# allow outgoing traffic and deny incomming traffic
+sudo ufw default allow outgoing
+sudo ufw default deny incoming
+
+# allow the specified ports
+sudo ufw allow ssh
+sudo ufw allow https
+sudo ufw allow http
+
+#enable the firewall
+sudo service ufw start
+sudo ufw enable
+
+# check the status
+sudo ufw status numbered
+
+

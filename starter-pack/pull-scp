@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# copies files from the remote server to the local machine
+# use it for local backup
+# original command: scp -r -i /home/was/.ssh/school ubuntu@54.157.155.107:/home/ubuntu/starter-pack  /home/was/myFiles/DevOps-playground/ 
+
+pkey="/home/was/.ssh/school"
+remote_host="ubuntu@54.157.155.107"
+source_path="/home/ubuntu/starter-pack"
+dstn_path="/home/was/myFiles/DevOps-playground/starter-pack/"
+#scp -r -i $p-key $remote_host:$source_path $dstn-path
+
+scp -r -i $pkey ubuntu@$remote_host:$source_path $dstn_path
