@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#creates a new user and grants Replication permission
+user="replica_user"
+pass="***"
+hostname="%"
+#permission="REPLICATION SLAVE"
+mysql -u root -p     -e "CREATE USER '$user'@'$hostname' IDENTIFIED BY '$pass';
+GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
+GRANT REPLICATION SLAVE ON mysql.user TO '$user'@'$hostname';
+GRANT REPLICATION CLIENT ON mysql.user TO '$user'@'$hostname';
+FLUSH PRIVILEGES;"
+
+mysql -uholberton_user -p -e 'SELECT user, Repl_slave_priv FROM mysql.user;'
+

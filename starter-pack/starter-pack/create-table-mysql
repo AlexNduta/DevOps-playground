@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#creates a DB 'tyrell_corp' a table 'nexus6' and inserts data
+#gives user 'holberton_user' SELECT privileges
+
+user="holberton_user"
+DB="tyrell_corp"
+table="nexus6"
+
+#mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS $DB;"
+
+mysql -u root -p -e "USE $DB;
+CREATE TABLE IF NOT EXISTS $table (id INT NOT NULL, name VARCHAR(255) NOT NULL, PRIMARY KEY(id));
+GRANT SELECT ON tyrell_corp.nexus6 TO '$user'@'localhost';
+FLUSH PRIVILEGES;
+INSERT INTO $DB.$table(id, name)VALUES (1,'Leon');
+SELECT * FROM $DB.$table;"
+

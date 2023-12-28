@@ -1,0 +1,15 @@
+#!/usr/bin/env bash                                      
+#contains initial ufw setup configs                                             
+#how to use ./ufw-setup ipof_remote_server                                          
+
+sudo ufw disable                                                                    
+sudo ufw reset                                                                      
+sudo ufw default allow outgoing                                                     
+sudo ufw default deny incoming                                                      
+sudo ufw allow ssh                                                                  
+sudo ufw allow http                                                                 
+sudo ufw allow https                                                                
+sudo ufw allow from $1 to any port 3306                                             
+sudo ufw enable                                                                     
+sudo service ufw start                                                             
+sudo ufw status numbered#!/usr/bin/env bin

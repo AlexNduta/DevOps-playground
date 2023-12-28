@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#used to login to any sevre using my public key
+username="root"
+ssh -i /home/was/.ssh/school $username@$1
