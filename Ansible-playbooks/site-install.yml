@@ -4,12 +4,14 @@
   pre_tasks:
 
   - name: update CentOS
+    tags: always
     dnf:
       update_only: yes
       update_cache: yes
     when: ansible_distribution == "CentOS"
 
-  - name: install updates (ububutu)
+  - name: install updates (ubuntu)
+    tags: always
     apt:
       update_only: yes
       update_cache: yes
@@ -20,6 +22,7 @@
   tasks:
 
   - name: install packages in Ubuntu
+    tags: postgres, ubuntu
     apt:
       name: 
         - postgresql
@@ -27,6 +30,7 @@
     when: ansible_distribution == "Ubuntu"
 
   - name: install pakages in CentOS
+    tags: centos, apache, php 
     dnf:
       name:
         - httpd
