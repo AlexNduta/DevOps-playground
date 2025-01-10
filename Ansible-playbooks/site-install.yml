@@ -1,0 +1,36 @@
+
+- hosts: all
+  become: true
+  pre_tasks:
+
+  - name: update CentOS
+    dnf:
+      update_only: yes
+      update_cache: yes
+    when: ansible_distribution == "CentOS"
+
+  - name: install updates (ububutu)
+    apt:
+      update_only: yes
+      update_cache: yes
+    when: ansible_distribution == "Ubuntu"
+
+- hosts: web_server
+  become: true
+  tasks:
+
+  - name: install packages in Ubuntu
+    apt:
+      name: 
+        - postgresql
+      state: latest
+    when: ansible_distribution == "Ubuntu"
+
+  - name: install pakages in CentOS
+    dnf:
+      name:
+        - httpd
+        - php
+      state: latest
+    when: ansible_distribution == "CentOS"
+

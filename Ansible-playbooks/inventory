@@ -1,2 +1,8 @@
-100.75.149.251 tree_pkg=tree nvim_pkg=nvim apache_pkg=httpd
-100.75.76.47 tree_pkg=tree nvim_pkg=nvim apache_pkg=apache2
+[web_server]
+100.75.149.251
+
+[DB_servers]
+100.75.76.47
+
+[file_server]
+100.75.230.193
