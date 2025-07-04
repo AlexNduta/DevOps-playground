@@ -1,6 +1,6 @@
 pipeline {
   agent{
-    docker {image 'python:3.9-slim'}
+    dockerContainer { image 'python:3.9-slim' }
   }
   stages {
     stage('Run my python') {
