@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+# connect to a speciic server using the provided key
+ssh -i ~/.ssh/school.pub "$1"@"$2"
+
